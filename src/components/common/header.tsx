@@ -1,7 +1,6 @@
 import { MapPin, MousePointer2 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import NumberTicker from "@/components/magicui/number-ticker";
 
 export default function Header() {
   const now = new Date();
@@ -14,7 +13,7 @@ export default function Header() {
   const currentTimeInLondon = formatter.format(now);
 
   return (
-    <div className="flex flex-col -space-y-5 justify-center mt-[24vh] mx-auto items-center text-center">
+    <div className="flex flex-col justify-center mt-[24vh] mx-auto items-center text-center">
       <div className="flex items-center text-center space-x-4">
         <p className="tracking-tight text-[54px] dark:text-gray-600 text-neutral-400 font-medium">
           Hello 👋🏻, {`I'm`}
@@ -36,7 +35,7 @@ export default function Header() {
         </motion.div>
         <p className="text-[54px] tracking-tight font-medium">Elijah</p>
       </div>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center -mt-2 space-x-4">
         <motion.div
           whileHover={{ scale: 1.1, rotate: -2 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -76,20 +75,13 @@ export default function Header() {
             </div>
           </div>
         </motion.div>
-        <div className="flex flex-col leading-tight -space-y-4">
-          <p className="text-[32px] tracking-tight font-mono2 font-medium">
-            software
-          </p>
-          <p className="text-[54px] tracking-tight font-medium">developer</p>
-        </div>
-        <p className="text-[54px] mt-6 tracking-tight dark:text-gray-600 text-neutral-400 font-medium">
+        <p className="text-[54px] tracking-tight font-medium">developer</p>
+        <p className="text-[54px] tracking-tight dark:text-gray-600 text-neutral-400 font-medium">
           and
         </p>
-        <p className="text-[54px] mt-6 tracking-tight font-medium">
-          UI designer
-        </p>
+        <p className="text-[54px] tracking-tight font-medium">UI designer</p>
       </div>
-      <div className="flex items-center relative space-x-4">
+      <div className="flex items-center -mt-6 relative space-x-4">
         <p className="tracking-tight text-[54px] dark:text-gray-600 text-neutral-400 font-medium">
           Based in
         </p>

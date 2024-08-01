@@ -1,4 +1,12 @@
-import { House, Mail, Moon, Pencil, ScrollText } from "lucide-react";
+import {
+  Briefcase,
+  House,
+  Mail,
+  Moon,
+  Pencil,
+  PencilRuler,
+  ScrollText,
+} from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -11,7 +19,9 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { Separator } from "../ui/separator";
 import ThemeSwitch from "./theme-switch";
+import { motion } from "framer-motion";
 
+import { MoveDown } from "lucide-react";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
@@ -61,15 +71,14 @@ const Icons = {
 export default function LinksDock() {
   const DATA = {
     navbar: [
+      { href: "#", icon: Briefcase, label: "Experience" },
+      { href: "#", icon: PencilRuler, label: "Skills" },
       {
         href: "#",
-        icon: House,
-        label: "Home",
-        click: () => {
-          console.log("test");
-        },
+        icon: Pencil,
+        label: "Projects",
+        click: () => console.log(1),
       },
-      { href: "#", icon: Pencil, label: "Blog" },
     ],
     contact: {
       social: {
@@ -90,7 +99,7 @@ export default function LinksDock() {
         },
         Resume: {
           name: "Resume",
-          url: "https://utfs.io/f/1550ba9a-3c75-46ae-9e10-169d7951d4d0-lfymu7.pdf",
+          url: "https://utfs.io/f/9760b47b-5f77-4eee-9738-ef0e6468a71d-sh780x.pdf",
           icon: Icons.resume,
         },
       },
@@ -98,7 +107,28 @@ export default function LinksDock() {
   };
 
   return (
-    <div className="fixed bottom-10">
+    <div className="fixed bottom-10 flex flex-row">
+      <motion.div
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          duration: 1,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+        className=" flex mt-10 mr-4 flex-col items-center text-center justify-center"
+      >
+        <div
+          className={cn(
+            buttonVariants({ variant: "ghost", size: "icon" }),
+            "size-10 rounded-full border cursor-pointer",
+          )}
+        >
+          <MoveDown className="size-4" />
+        </div>
+      </motion.div>
       <TooltipProvider delayDuration={200}>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
