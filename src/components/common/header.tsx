@@ -23,9 +23,7 @@ export default function Header() {
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
           <Image
-            src={
-              "https://utfs.io/f/248fc5d3-0da0-4d86-85a1-a44e48020e27-h2az4q.jpg"
-            }
+            src={"/headshot.png"}
             className="rounded-full ring-[1px] shadow-xl dark:shadow-neutral-800 border-[4px] dark:border-neutral-700 border-white dark:ring-neutral-500 ring-neutral-100"
             alt="headshot"
             sizes="100vw"
@@ -96,9 +94,7 @@ export default function Header() {
               className="fill-blue-400 top-14 left-14 z-50 relative stroke-neutral-100 text-shadow-md"
             />
             <Image
-              src={
-                "https://utfs.io/f/603f539f-ae01-4b97-b635-fea7d1861877-cdx17m.29.57.png"
-              }
+              src={"/location.png"}
               className="ring-[1px] dark:border-neutral-700 dark:shadow-neutral-800 object-cover h-24 w-36 rounded-lg relative shadow-xl dark:ring-neutral-500 border-[4px] border-white ring-neutral-100"
               alt="headshot"
               width={140}
