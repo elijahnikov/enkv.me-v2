@@ -156,14 +156,7 @@ export default function LinksDock() {
           ))}
           <Separator orientation="vertical" className="h-full py-2" />
           <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <ThemeSwitch />
-              </TooltipTrigger>
-              <TooltipContent className="text-xs">
-                <p>Theme</p>
-              </TooltipContent>
-            </Tooltip>
+            <ThemeSwitch />
           </DockIcon>
         </Dock>
       </TooltipProvider>
