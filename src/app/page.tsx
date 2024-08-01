@@ -14,7 +14,7 @@ export default function Home() {
     ease: "easeOut",
   };
   return (
-    <main className="flex min-h-screen flex-col items-center pb-32 justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="min-h-screen w-[70vw]">
         <Header />
       </div>
