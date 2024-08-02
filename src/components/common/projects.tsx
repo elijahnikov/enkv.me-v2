@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { Icons } from "./dock";
 import { ArrowUpRight } from "lucide-react";
+import BlurFade from "../magicui/blur-fade";
 
 const extractedObjects = Object.entries(stacks).reduce(
   (acc: Record<string, string | React.ReactNode>, [_, childObject]) => {
@@ -22,19 +23,21 @@ const extractedObjects = Object.entries(stacks).reduce(
 export default function Projects() {
   return (
     <div className="w-[50%] mt-20">
-      <div>
-        <h1
-          id="projectsText"
-          className="font-mono mb-2 text-md dark:text-neutral-300 text-neutral-700"
-        >
-          Projects
-        </h1>
-      </div>
-      <div className="flex space-y-4 flex-col">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </div>
+      <BlurFade inView>
+        <div>
+          <h1
+            id="projectsText"
+            className="font-mono mb-2 text-md dark:text-neutral-300 text-neutral-700"
+          >
+            Projects
+          </h1>
+        </div>
+        <div className="flex space-y-4 flex-col">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      </BlurFade>
     </div>
   );
 }

@@ -108,7 +108,15 @@ export default function LinksDock() {
         Email: {
           name: "Email me",
           url: "mailto:elijah@enkv.me",
-          icon: Icons.email,
+          icon: () => (
+            <div className="relative">
+              <Icons.email className="size-4" />
+              <span className="absolute bottom-3 left-3 flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+              </span>
+            </div>
+          ),
         },
         Resume: {
           name: "Resume",
