@@ -20,6 +20,7 @@ const extractedObjects = Object.entries(stacks).reduce(
   },
   {},
 );
+
 export default function Projects() {
   return (
     <div className="w-[55%] mt-20">
