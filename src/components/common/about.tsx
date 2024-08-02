@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="w-[50%] mt-12">
+    <div className="w-[55%] mt-12">
       <h1 className="font-mono text-md dark:text-neutral-300 text-neutral-700">
         About
       </h1>

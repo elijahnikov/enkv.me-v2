@@ -6,20 +6,21 @@ import {
 } from "@/components/ui/accordion";
 import { experience, ExperienceType } from "@/lib/data/experience";
 import { stacks } from "@/lib/data/stacks";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "../ui/tooltip";
+
 import { Badge } from "../ui/badge";
+import Link from "next/link";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 export default function WorkExperience() {
   return (
-    <div className="w-[50%] mt-20">
-      <h1 className="font-mono text-md dark:text-neutral-300 text-neutral-700">
+    <div className="w-[55%] mt-20">
+      <h1
+        id="experienceText"
+        className="font-mono text-md dark:text-neutral-300 text-neutral-700"
+      >
         Work experience
       </h1>
       <Accordion type="single" collapsible className="w-full">
@@ -58,7 +59,16 @@ function ExperienceCard({ experience }: { experience: ExperienceType }) {
           </div>
           <div className="flex items-center justify-between w-full">
             <div className="flex ml-2 text-left flex-col">
-              <p className="text-md leading-tight">{company}</p>
+              <Link
+                href={website}
+                className="w-max hover:underline"
+                target="_blank"
+              >
+                <div className="flex items-center space-x-1">
+                  <p className="text-md leading-tight">{company}</p>
+                  <ArrowUpRight size={18} />
+                </div>
+              </Link>
               <p className="text-sm leading-tight text-neutral-500 font-normal">
                 {roles.title}
               </p>
@@ -71,7 +81,7 @@ function ExperienceCard({ experience }: { experience: ExperienceType }) {
           </div>
         </div>
       </AccordionTrigger>
-      <AccordionContent>
+      <AccordionContent className="pb-6">
         <div className="flex flex-col space-y-4 w-[90%] justify-end self-end items-end ml-auto">
           {roles.pointers.map((pointer, index) => (
             <div className="flex" key={index}>
@@ -82,36 +92,40 @@ function ExperienceCard({ experience }: { experience: ExperienceType }) {
           ))}
         </div>
         <div className="flex flex-wrap mt-2 gap-2 w-[90%] ml-auto">
-          {/* <TooltipProvider delayDuration={200}> */}
           {roles.stack.map((stack, index) => {
             const src = extractedObjects[stack];
-            return (
-              <div key={index}>
-                {/* <Tooltip> */}
-                {/* <TooltipTrigger> */}
-                <Badge
-                  variant={"secondary"}
-                  className="rounded-md py-1 space-x-1 px-2 dark:bg-neutral-900 border border-input"
-                >
-                  <svg
-                    viewBox="0 0 128 128"
-                    className="z-10 h-[18px] max-h-[18px] w-[18px] max-w-[18px] overflow-visible"
-                  >
-                    {src}
-                  </svg>
-                  <p className="text-xs font-normal">{stack}</p>
-                </Badge>
-                {/* </TooltipTrigger>
-                    <TooltipContent className="relative left-0 border-neutral-200 text-xs dark:border-neutral-800">
-                      {stack}
-                    </TooltipContent>
-                  </Tooltip> */}
-              </div>
-            );
+            return <StackBadge src={src} stack={stack} key={index} />;
           })}
-          {/* </TooltipProvider> */}
         </div>
       </AccordionContent>
     </AccordionItem>
+  );
+}
+
+export function StackBadge({
+  stack,
+  src,
+}: {
+  stack: string;
+  src: React.ReactNode;
+}) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.05, rotate: 1 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+    >
+      <Badge
+        variant={"secondary"}
+        className="rounded-md py-1 space-x-1 px-2 dark:bg-neutral-200 text-black border border-input"
+      >
+        <svg
+          viewBox="0 0 128 128"
+          className="z-10 h-[18px] max-h-[18px] w-[18px] max-w-[18px] overflow-visible"
+        >
+          {src}
+        </svg>
+        <p className="text-xs font-normal">{stack}</p>
+      </Badge>
+    </motion.div>
   );
 }

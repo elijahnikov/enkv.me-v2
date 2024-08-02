@@ -20,7 +20,7 @@ import ThemeSwitch from "./theme-switch";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
-const Icons = {
+export const Icons = {
   email: (props: IconProps) => <Mail {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -65,15 +65,32 @@ const Icons = {
 };
 
 export default function LinksDock() {
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const DATA = {
     navbar: [
-      { href: "#", icon: Briefcase, label: "Experience" },
-      { href: "#", icon: PencilRuler, label: "Skills" },
+      {
+        href: "#",
+        icon: Briefcase,
+        label: "Experience",
+        click: () => scrollToElement("experienceText"),
+      },
+      {
+        href: "#",
+        icon: PencilRuler,
+        label: "Skills",
+        click: () => scrollToElement("skillsText"),
+      },
       {
         href: "#",
         icon: ChevronsLeftRight,
         label: "Projects",
-        click: () => console.log(1),
+        click: () => scrollToElement("projectsText"),
       },
     ],
     contact: {
@@ -103,7 +120,7 @@ export default function LinksDock() {
   };
 
   return (
-    <div className="fixed bottom-10">
+    <div className="fixed z-50 bottom-10">
       <TooltipProvider delayDuration={200}>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (
