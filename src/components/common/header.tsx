@@ -2,6 +2,7 @@ import { MapPin, MousePointer2 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import BlurFade from "../magicui/blur-fade";
+import { useLogSnag } from "@logsnag/next";
 
 export default function Header() {
   const now = new Date();

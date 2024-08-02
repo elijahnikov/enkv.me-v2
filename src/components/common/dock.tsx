@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { Separator } from "../ui/separator";
 import ThemeSwitch from "./theme-switch";
+import { useLogSnag } from "@logsnag/next";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
@@ -65,11 +66,25 @@ export const Icons = {
 };
 
 export default function LinksDock() {
+  const { track } = useLogSnag();
+
   const scrollToElement = (elementId: string) => {
     const element = document.getElementById(elementId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const trackDockEvent = ({ event }: { event: string }) => {
+    track({
+      channel: "external-links",
+      event: "Dock event click",
+      icon: "🌐",
+      notify: true,
+      tags: {
+        event,
+      },
+    });
   };
 
   const DATA = {
@@ -135,27 +150,20 @@ export default function LinksDock() {
             <DockIcon key={item.label}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  {item.click ? (
-                    <div
-                      onClick={item.click}
-                      className={cn(
-                        buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-12 rounded-full",
-                      )}
-                    >
-                      <item.icon className="size-4" />
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        buttonVariants({ variant: "ghost", size: "icon" }),
-                        "size-10 rounded-full",
-                      )}
-                    >
-                      <item.icon className="size-4" />
-                    </Link>
-                  )}
+                  <div
+                    onClick={() => {
+                      trackDockEvent({
+                        event: item.label,
+                      });
+                      item.click();
+                    }}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12 rounded-full",
+                    )}
+                  >
+                    <item.icon className="size-4" />
+                  </div>
                 </TooltipTrigger>
                 <TooltipContent className="text-xs">
                   <p>{item.label}</p>
@@ -169,6 +177,11 @@ export default function LinksDock() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
+                    onClick={() => {
+                      trackDockEvent({
+                        event: social.name,
+                      });
+                    }}
                     href={social.url}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LogSnagProvider } from "@logsnag/next";
 
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
+import { env } from "@/env";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
+      <head>
+        <LogSnagProvider
+          token={env.NEXT_PUBLIC_LOGSNAG_TOKEN}
+          project={env.NEXT_PUBLIC_LOGSNAG_PROJECT}
+        />
+      </head>
       <body
         className={cn(inter.className, GeistSans.variable, GeistMono.variable)}
       >

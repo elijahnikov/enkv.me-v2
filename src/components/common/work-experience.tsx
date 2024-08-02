@@ -14,8 +14,21 @@ import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import BlurFade from "../magicui/blur-fade";
+import { useLogSnag } from "@logsnag/next";
 
 export default function WorkExperience() {
+  const { track } = useLogSnag();
+  const trackExperienceOpen = ({ company }: { company: string }) => {
+    track({
+      channel: "work-experience",
+      event: "Open work experience accordion",
+      icon: "🎨",
+      notify: true,
+      tags: {
+        company,
+      },
+    });
+  };
   return (
     <div className="w-[55%] mt-20">
       <BlurFade>
@@ -27,7 +40,11 @@ export default function WorkExperience() {
         </h1>
         <Accordion type="single" collapsible className="w-full">
           {experience.map((work, index) => (
-            <ExperienceCard experience={work} key={index} />
+            <ExperienceCard
+              track={trackExperienceOpen}
+              experience={work}
+              key={index}
+            />
           ))}
         </Accordion>
       </BlurFade>
@@ -35,7 +52,13 @@ export default function WorkExperience() {
   );
 }
 
-function ExperienceCard({ experience }: { experience: ExperienceType }) {
+function ExperienceCard({
+  experience,
+  track,
+}: {
+  experience: ExperienceType;
+  track: ({ company }: { company: string }) => void;
+}) {
   const { company, website, roles, location, localeImage } = experience;
   const extractedObjects = Object.entries(stacks).reduce(
     (acc: Record<string, string | React.ReactNode>, [_, childObject]) => {
@@ -49,7 +72,10 @@ function ExperienceCard({ experience }: { experience: ExperienceType }) {
 
   return (
     <AccordionItem className="border-none" value={company}>
-      <AccordionTrigger className="transition-all [&[data-state=open]>svg]:rotate-180">
+      <AccordionTrigger
+        onClick={() => track({ company })}
+        className="transition-all [&[data-state=open]>svg]:rotate-180"
+      >
         <div className="flex w-full items-center">
           <div>
             <Image
