@@ -2,8 +2,8 @@ import {
   Briefcase,
   ChevronsLeftRight,
   Mail,
-  PencilRuler,
   ScrollText,
+  Wrench,
 } from "lucide-react";
 import {
   Tooltip,
@@ -82,7 +82,7 @@ export default function LinksDock() {
       },
       {
         href: "#",
-        icon: PencilRuler,
+        icon: Wrench,
         label: "Skills",
         click: () => scrollToElement("skillsText"),
       },

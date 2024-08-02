@@ -22,7 +22,7 @@ const extractedObjects = Object.entries(stacks).reduce(
 );
 export default function Projects() {
   return (
-    <div className="w-[50%] mt-20">
+    <div className="w-[55%] mt-20">
       <BlurFade inView>
         <div>
           <h1
@@ -56,17 +56,27 @@ function ProjectCard({ project }: { project: ProjectsType }) {
           )}
         </div>
         <div className="flex relative top-[100%] space-x-2 items-center">
-          {project.wip && <Badge>WIP</Badge>}
+          {project.wip && (
+            <Badge variant={"secondary"} className="border border-input">
+              WIP
+            </Badge>
+          )}
           <Link
             href={project.github_url}
-            className={cn(buttonVariants({ size: "icon" }), "h-6 p-1 w-6")}
+            className={cn(
+              buttonVariants({ size: "icon", variant: "secondary" }),
+              "h-6 p-1 w-6 border border-input",
+            )}
             target="_blank"
           >
             <Icons.github />
           </Link>
           <Link
             href={project.url}
-            className={cn(buttonVariants({ size: "icon" }), "h-6 w-6")}
+            className={cn(
+              buttonVariants({ size: "icon", variant: "secondary" }),
+              "h-6 w-6 border border-input",
+            )}
             target="_blank"
           >
             <ArrowUpRight size={16} />
