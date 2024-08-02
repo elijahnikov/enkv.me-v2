@@ -1,9 +1,7 @@
 import {
   Briefcase,
-  House,
+  ChevronsLeftRight,
   Mail,
-  Moon,
-  Pencil,
   PencilRuler,
   ScrollText,
 } from "lucide-react";
@@ -19,9 +17,7 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { Separator } from "../ui/separator";
 import ThemeSwitch from "./theme-switch";
-import { motion } from "framer-motion";
 
-import { MoveDown } from "lucide-react";
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 const Icons = {
@@ -75,7 +71,7 @@ export default function LinksDock() {
       { href: "#", icon: PencilRuler, label: "Skills" },
       {
         href: "#",
-        icon: Pencil,
+        icon: ChevronsLeftRight,
         label: "Projects",
         click: () => console.log(1),
       },
@@ -107,28 +103,7 @@ export default function LinksDock() {
   };
 
   return (
-    <div className="fixed bottom-10 flex flex-row">
-      <motion.div
-        animate={{
-          y: [0, -10, 0],
-        }}
-        transition={{
-          duration: 1,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatType: "loop",
-        }}
-        className=" flex mt-10 mr-4 flex-col items-center text-center justify-center"
-      >
-        <div
-          className={cn(
-            buttonVariants({ variant: "ghost", size: "icon" }),
-            "size-10 rounded-full border cursor-pointer",
-          )}
-        >
-          <MoveDown className="size-4" />
-        </div>
-      </motion.div>
+    <div className="fixed bottom-10">
       <TooltipProvider delayDuration={200}>
         <Dock direction="middle">
           {DATA.navbar.map((item) => (

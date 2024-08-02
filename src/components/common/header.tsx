@@ -13,9 +13,9 @@ export default function Header() {
   const currentTimeInLondon = formatter.format(now);
 
   return (
-    <div className="flex flex-col justify-center mt-[24vh] mx-auto items-center text-center">
+    <div className="flex flex-col justify-center mt-[4vh] mx-auto items-center text-center">
       <div className="flex items-center text-center space-x-4">
-        <p className="tracking-tight text-[54px] dark:text-gray-600 text-neutral-400 font-medium">
+        <p className="tracking-tight text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
           Hello 👋🏻, {`I'm`}
         </p>
         <motion.div
@@ -31,14 +31,14 @@ export default function Header() {
             height={120}
           />
         </motion.div>
-        <p className="text-[54px] tracking-tight font-medium">Elijah</p>
+        <p className="text-[48px] tracking-tight font-medium">Elijah</p>
       </div>
       <div className="flex items-center -mt-2 space-x-4">
         <motion.div
           whileHover={{ scale: 1.1, rotate: -2 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <div className="ring-[4px] min-w-max dark:border-neutral-700 p-1 dark:shadow-neutral-800 shadow-xl min-h-max relative border-[4px] border-white dark:ring-neutral-500 ring-neutral-100 rounded-lg">
+          <div className="ring-[4px] bg-white dark:bg-black min-w-max dark:border-neutral-700 p-1 dark:shadow-neutral-800 shadow-xl min-h-max relative border-[4px] border-white dark:ring-neutral-500 ring-neutral-100 rounded-lg">
             <div>
               <MousePointer2
                 size={28}
@@ -73,17 +73,18 @@ export default function Header() {
             </div>
           </div>
         </motion.div>
-        <p className="text-[54px] tracking-tight font-medium">developer</p>
-        <p className="text-[54px] tracking-tight dark:text-gray-600 text-neutral-400 font-medium">
-          and
+        <p className="text-[48px] dark:text-neutral-700 text-neutral-400 tracking-tight font-medium">
+          a
         </p>
-        <p className="text-[54px] tracking-tight font-medium">UI designer</p>
+        <p className="text-[48px] tracking-tight font-medium">
+          software developer
+        </p>
       </div>
-      <div className="flex items-center -mt-6 relative space-x-4">
-        <p className="tracking-tight text-[54px] dark:text-gray-600 text-neutral-400 font-medium">
+      <div className="flex items-center -mt-8 relative space-x-4">
+        <p className="tracking-tight text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
           Based in
         </p>
-        <p className="text-[54px] tracking-tight font-medium">London,</p>
+        <p className="text-[48px] tracking-tight font-medium">London,</p>
         <motion.div
           whileHover={{ scale: 1.1, rotate: 2 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -108,7 +109,7 @@ export default function Header() {
             </p>
           </div>
         </motion.div>
-        <p className="text-[54px] tracking-tight font-medium">UK</p>
+        <p className="text-[48px] tracking-tight font-medium">UK</p>
       </div>
     </div>
   );
