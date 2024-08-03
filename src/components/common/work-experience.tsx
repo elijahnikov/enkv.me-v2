@@ -15,6 +15,7 @@ import Link from "next/link";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import BlurFade from "../magicui/blur-fade";
 import { useLogSnag } from "@logsnag/next";
+import Container from "./container";
 
 export default function WorkExperience() {
   const { track } = useLogSnag();
@@ -30,7 +31,7 @@ export default function WorkExperience() {
     });
   };
   return (
-    <div className="w-[55%] mt-20">
+    <Container>
       <BlurFade>
         <h1
           id="experienceText"
@@ -48,7 +49,7 @@ export default function WorkExperience() {
           ))}
         </Accordion>
       </BlurFade>
-    </div>
+    </Container>
   );
 }
 

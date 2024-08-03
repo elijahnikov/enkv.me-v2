@@ -10,6 +10,7 @@ import { buttonVariants } from "../ui/button";
 import { Icons } from "./dock";
 import { ArrowUpRight } from "lucide-react";
 import BlurFade from "../magicui/blur-fade";
+import Container from "./container";
 
 const extractedObjects = Object.entries(stacks).reduce(
   (acc: Record<string, string | React.ReactNode>, [_, childObject]) => {
@@ -23,7 +24,7 @@ const extractedObjects = Object.entries(stacks).reduce(
 
 export default function Projects() {
   return (
-    <div className="w-[55%] mt-20">
+    <Container>
       <BlurFade inView>
         <div>
           <h1
@@ -39,7 +40,7 @@ export default function Projects() {
           ))}
         </div>
       </BlurFade>
-    </div>
+    </Container>
   );
 }
 

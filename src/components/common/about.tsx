@@ -1,8 +1,9 @@
 import BlurFade from "../magicui/blur-fade";
+import Container from "./container";
 
 export default function About() {
   return (
-    <div className="w-[55%] mt-12">
+    <Container>
       <BlurFade>
         <h1 className="font-mono text-md dark:text-neutral-300 text-neutral-700">
           About
@@ -13,6 +14,6 @@ export default function About() {
           that are inclusive and intuitive.
         </p>
       </BlurFade>
-    </div>
+    </Container>
   );
 }

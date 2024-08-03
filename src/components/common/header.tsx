@@ -18,12 +18,13 @@ export default function Header() {
     <div className="flex flex-col justify-center mt-[4vh] mx-auto items-center text-center">
       <BlurFade>
         <div className="flex items-center text-center space-x-4">
-          <p className="tracking-tight text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
+          <p className="tracking-tight text-[32px] md:text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
             Hello 👋🏻, {`I'm`}
           </p>
           <motion.div
             whileHover={{ scale: 1.1, rotate: 2 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="hidden md:block"
           >
             <Image
               src={"/headshot.png"}
@@ -34,7 +35,9 @@ export default function Header() {
               height={120}
             />
           </motion.div>
-          <p className="text-[48px] tracking-tight font-medium">Elijah</p>
+          <p className="text-[32px] md:text-[48px] tracking-tight font-medium">
+            Elijah
+          </p>
         </div>
       </BlurFade>
       <BlurFade delay={0.05}>
@@ -42,6 +45,7 @@ export default function Header() {
           <motion.div
             whileHover={{ scale: 1.1, rotate: -2 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="hidden md:block"
           >
             <div className="ring-[4px] bg-white dark:bg-black min-w-max dark:border-neutral-300 p-1 dark:shadow-neutral-800 shadow-xl min-h-max relative border-[4px] border-white dark:ring-neutral-500 ring-neutral-100 rounded-lg">
               <div>
@@ -78,23 +82,26 @@ export default function Header() {
               </div>
             </div>
           </motion.div>
-          <p className="text-[48px] dark:text-neutral-700 text-neutral-400 tracking-tight font-medium">
+          <p className="text-[32px] md:text-[48px] dark:text-neutral-700 text-neutral-400 tracking-tight font-medium">
             a
           </p>
-          <p className="text-[48px] tracking-tight font-medium">
+          <p className="text-[32px] md:text-[48px] tracking-tight font-medium">
             software developer
           </p>
         </div>
       </BlurFade>
       <BlurFade delay={0.1}>
-        <div className="flex items-center -mt-8 relative space-x-4">
-          <p className="tracking-tight text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
+        <div className="flex items-center -mt-2 md:-mt-8 relative space-x-4">
+          <p className="tracking-tight text-[32px] md:text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
             Based in
           </p>
-          <p className="text-[48px] tracking-tight font-medium">London,</p>
+          <p className="text-[32px] md:text-[48px] tracking-tight font-medium">
+            London,
+          </p>
           <motion.div
             whileHover={{ scale: 1.1, rotate: 2 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="hidden md:block"
           >
             <div>
               <MapPin
@@ -116,7 +123,9 @@ export default function Header() {
               </p>
             </div>
           </motion.div>
-          <p className="text-[48px] tracking-tight font-medium">UK</p>
+          <p className="text-[32px] md:text-[48px] tracking-tight font-medium">
+            UK
+          </p>
         </div>
       </BlurFade>
     </div>

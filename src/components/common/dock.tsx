@@ -145,7 +145,7 @@ export default function LinksDock() {
   return (
     <div className="fixed z-50 bottom-10">
       <TooltipProvider delayDuration={200}>
-        <Dock direction="middle">
+        <Dock magnification={50} direction="middle">
           {DATA.navbar.map((item) => (
             <DockIcon key={item.label}>
               <Tooltip>

@@ -10,7 +10,7 @@ import Projects from "@/components/common/projects";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="min-h-screen mx-auto flex flex-col items-center w-[70vw]">
+      <div className="min-h-screen mx-auto flex flex-col items-center w-[90vw] xl:w-[70vw]">
         <Header />
         <About />
         <WorkExperience />

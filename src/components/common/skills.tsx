@@ -11,10 +11,11 @@ import {
 import _ from "lodash";
 import { Badge } from "@/components/ui/badge";
 import BlurFade from "../magicui/blur-fade";
+import Container from "./container";
 
 export default function Skills() {
   return (
-    <div className="w-[55%] mt-20">
+    <Container>
       <BlurFade inView>
         <h1
           id="skillsText"
@@ -81,6 +82,6 @@ export default function Skills() {
           </div>
         </div>
       </BlurFade>
-    </div>
+    </Container>
   );
 }
