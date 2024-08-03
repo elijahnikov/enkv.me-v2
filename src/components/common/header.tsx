@@ -47,7 +47,7 @@ export default function Header() {
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             className="hidden md:block"
           >
-            <div className="ring-[4px] bg-white dark:bg-black min-w-max dark:border-neutral-300 p-1 dark:shadow-neutral-800 shadow-xl min-h-max relative border-[4px] border-white dark:ring-neutral-500 ring-neutral-100 rounded-lg">
+            <div className="ring-[4px] scale-[0.9] bg-white dark:bg-black min-w-max dark:border-neutral-300 p-1 dark:shadow-neutral-800 shadow-xl min-h-max relative border-[4px] border-white dark:ring-neutral-500 ring-neutral-100 rounded-lg">
               <div>
                 <MousePointer2
                   size={28}
