@@ -37,7 +37,7 @@ export default function WorkExperience() {
           id="experienceText"
           className="font-mono text-md dark:text-neutral-300 text-neutral-700"
         >
-          Work experience
+          💼 Work experience
         </h1>
         <Accordion type="single" collapsible className="w-full">
           {experience.map((work, index) => (

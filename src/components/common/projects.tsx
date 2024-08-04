@@ -31,7 +31,7 @@ export default function Projects() {
             id="projectsText"
             className="font-mono mb-2 text-md dark:text-neutral-300 text-neutral-700"
           >
-            Projects
+            💻 Projects
           </h1>
         </div>
         <div className="flex space-y-4 flex-col">

@@ -91,19 +91,19 @@ export default function LinksDock() {
     navbar: [
       {
         href: "#",
-        icon: Briefcase,
+        icon: () => <p>💼</p>,
         label: "Experience",
         click: () => scrollToElement("experienceText"),
       },
       {
         href: "#",
-        icon: Wrench,
+        icon: () => <p>🔧</p>,
         label: "Skills",
         click: () => scrollToElement("skillsText"),
       },
       {
         href: "#",
-        icon: ChevronsLeftRight,
+        icon: () => <p>💻</p>,
         label: "Projects",
         click: () => scrollToElement("projectsText"),
       },

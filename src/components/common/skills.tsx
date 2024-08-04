@@ -21,7 +21,7 @@ export default function Skills() {
           id="skillsText"
           className="font-mono mb-2 text-md dark:text-neutral-300 text-neutral-700"
         >
-          Skills
+          🔧 Skills
         </h1>
         <div className="flex flex-col justify-center">
           <div className="flex justify-center">
