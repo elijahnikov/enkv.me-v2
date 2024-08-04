@@ -561,6 +561,41 @@ export const stacks: StacksType = {
   },
 };
 
+export const taglines = {
+  // Languages
+  TypeScript: "JavaScript with superpowers and static typing.",
+  JavaScript: "The language that powers the web.",
+  PostgreSQL: "Robust, open-source relational database system.",
+  Python: "Versatile language for everything from web to data science.",
+  Java: "Write once, run anywhere.",
+
+  // Cloud tools
+  Vercel: "Seamless deployment for Next.js applications.",
+  AWS: "Comprehensive cloud services for any application.",
+  Upstash: "Serverless Redis for efficient rate limiting.",
+  Supabase: "Backend-as-a-Service for rapid prototyping.",
+  Planetscale: "MySQL-compatible serverless database platform.",
+
+  // Tools and frameworks
+  React: "Build user interfaces with reusable components.",
+  "Next.js": "The React framework for production-ready web apps.",
+  "Node.js": "JavaScript runtime for server-side applications.",
+  GraphQL: "Query language for APIs, get only what you need.",
+  Prisma: "Intuitive database access and management.",
+  Flask: "Lightweight Python web framework for rapid development.",
+  tRPC: "Type-safe API calls between client and server.",
+  "React Query": "Simplified data fetching and state management.",
+  Tailwind: "Rapidly build custom UIs without leaving HTML.",
+  "D3.js": "Bring data to life with interactive visualizations.",
+  Apollo: "Comprehensive GraphQL platform.",
+  "Express.js": "Fast, unopinionated web framework for Node.js.",
+
+  // Testing
+  Cypress: "End-to-end testing for web applications.",
+  Jest: "Delightful JavaScript testing framework.",
+  Storybook: "Isolate and test UI components in a sandbox environment.",
+};
+
 export const flattenedStacks = Object.entries(stacks).reduce(
   (acc: Record<string, string | React.ReactNode>, [_, childObject]) => {
     Object.entries(childObject).forEach(([key, value]) => {

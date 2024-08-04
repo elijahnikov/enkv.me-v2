@@ -1,4 +1,4 @@
-import { stacks } from "@/lib/data/stacks";
+import { stacks, taglines } from "@/lib/data/stacks";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
@@ -32,9 +32,6 @@ export default function Skills() {
                     <h2 className="text-sm font-mono font-semibold text-neutral-600 dark:text-neutral-300 ">
                       {_.startCase(_.toLower(category))}
                     </h2>
-                    <Badge className="border font-mono rounded-md px-2 py-0 border-green-500 bg-green-400 text-black shadow-sm hover:bg-green-400">
-                      {Object.entries(items).length}
-                    </Badge>
                   </div>
                   <div className="grid grid-cols-4 gap-2">
                     <TooltipProvider delayDuration={400}>
@@ -70,7 +67,12 @@ export default function Skills() {
                             </motion.div>
                           </TooltipTrigger>
                           <TooltipContent className="text-xs">
-                            {name}
+                            <div>
+                              <p className="font-semibold">{name}</p>
+                              <p className="text-neutral-500 dark:text-neutral-400">
+                                {taglines[name as keyof typeof taglines]}
+                              </p>
+                            </div>
                           </TooltipContent>
                         </Tooltip>
                       ))}
