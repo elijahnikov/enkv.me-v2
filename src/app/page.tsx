@@ -6,6 +6,9 @@ import About from "@/components/common/about";
 import WorkExperience from "@/components/common/work-experience";
 import Skills from "@/components/common/skills";
 import Projects from "@/components/common/projects";
+import Container from "@/components/common/container";
+import { Button } from "@/components/ui/button";
+import Footer from "@/components/common/footer";
 
 export default function Home() {
   return (
@@ -16,7 +19,8 @@ export default function Home() {
         <WorkExperience />
         <Skills />
         <Projects />
-        <div className="h-48" />
+        <Footer />
+        <div className="h-32" />
       </div>
       <LinksDock />
     </main>
