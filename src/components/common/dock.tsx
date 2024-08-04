@@ -159,10 +159,10 @@ export default function LinksDock() {
                     }}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12 rounded-full",
+                      "size-10 rounded-full",
                     )}
                   >
-                    <item.icon className="size-4" />
+                    <item.icon />
                   </div>
                 </TooltipTrigger>
                 <TooltipContent className="text-xs">
