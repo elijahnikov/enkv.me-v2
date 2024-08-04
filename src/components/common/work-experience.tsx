@@ -103,7 +103,7 @@ function ExperienceCard({
                 {roles.title}
               </p>
             </div>
-            <div className="flex mr-2 text-left flex-col">
+            <div className="flex mr-1 text-left flex-col">
               <p className="text-sm leading-tight text-neutral-500 font-normal">
                 {roles.duration}
               </p>
