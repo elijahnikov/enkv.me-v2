@@ -11,7 +11,8 @@ export default function About() {
         <p className="text-sm dark:text-neutral-400 text-neutral-500">
           Software developer, product developer, design engineer with a keen eye
           for detail and fueled by a passion for crafting delightful experiences
-          that are inclusive and intuitive.
+          that are not only technically and functionally excellent but also
+          inclusive and intuitive.
         </p>
       </BlurFade>
     </Container>
