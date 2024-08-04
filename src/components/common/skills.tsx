@@ -67,11 +67,27 @@ export default function Skills() {
                             </motion.div>
                           </TooltipTrigger>
                           <TooltipContent className="text-xs">
-                            <div>
-                              <p className="font-semibold">{name}</p>
-                              <p className="text-neutral-500 dark:text-neutral-400">
-                                {taglines[name as keyof typeof taglines]}
-                              </p>
+                            <div className="flex items-center">
+                              <div className="bg-white rounded-lg p-1 items-center justify-center mx-auto flex -ml-1">
+                                <svg
+                                  viewBox="0 0 128 128"
+                                  className="absolute z-10 h-[22px] max-h-[22px] w-[22px] max-w-[22px] overflow-visible"
+                                >
+                                  {src}
+                                </svg>
+                                <svg
+                                  viewBox="0 0 128 128"
+                                  className="sticker h-[22px] max-h-[22px] w-[22px] max-w-[22px] overflow-visible drop-shadow-[rgba(0,_0,_0,_0.24)_0px_0.5px_1px]"
+                                >
+                                  {src}
+                                </svg>
+                              </div>
+                              <div className="ml-2">
+                                <p className="font-semibold">{name}</p>
+                                <p className="text-neutral-500 dark:text-neutral-400">
+                                  {taglines[name as keyof typeof taglines]}
+                                </p>
+                              </div>
                             </div>
                           </TooltipContent>
                         </Tooltip>
