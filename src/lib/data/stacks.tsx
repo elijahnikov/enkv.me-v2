@@ -603,5 +603,5 @@ export const flattenedStacks = Object.entries(stacks).reduce(
     });
     return acc;
   },
-  {},
+  {}
 );

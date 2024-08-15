@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <Container>
-      <div className="flex items-center text-neutral-500 px-2 justify-center space-x-4 w-full text-xs">
+      <div className="flex font-mono items-center text-neutral-500 px-2 justify-center space-x-6 w-full text-xs">
         <p>©2024</p>
         <p>LDN, UK</p>
         <Button

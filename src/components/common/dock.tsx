@@ -135,7 +135,7 @@ export default function LinksDock() {
         },
         Resume: {
           name: "Resume",
-          url: "https://utfs.io/f/9760b47b-5f77-4eee-9738-ef0e6468a71d-sh780x.pdf",
+          url: "https://utfs.io/f/5d25a76d-372a-4937-9c53-87f77cd1e39e-lfymu7.pdf",
           icon: Icons.resume,
         },
       },
@@ -159,7 +159,7 @@ export default function LinksDock() {
                     }}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full",
+                      "size-10 rounded-full"
                     )}
                   >
                     <item.icon />
@@ -186,7 +186,7 @@ export default function LinksDock() {
                     href={social.url}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full",
+                      "size-10 rounded-full"
                     )}
                   >
                     <social.icon className="size-4" />
