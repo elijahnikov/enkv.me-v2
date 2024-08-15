@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LogSnagProvider } from "@logsnag/next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={cn(inter.className, GeistSans.variable, GeistMono.variable)}
       >
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
