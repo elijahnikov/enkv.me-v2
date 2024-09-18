@@ -159,7 +159,7 @@ export default function LinksDock() {
                     }}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full"
+                      "size-10 rounded-lg",
                     )}
                   >
                     <item.icon />
@@ -186,7 +186,7 @@ export default function LinksDock() {
                     href={social.url}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-10 rounded-full"
+                      "size-10 rounded-lg",
                     )}
                   >
                     <social.icon className="size-4" />

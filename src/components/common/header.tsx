@@ -18,7 +18,7 @@ export default function Header() {
     <div className="flex flex-col justify-center mt-[4vh] mx-auto items-center text-center">
       <BlurFade>
         <div className="flex items-center text-center space-x-4">
-          <p className="tracking-tight text-[32px] md:text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
+          <p className="tracking-tight text-[32px] md:text-[48px] dark:text-neutral-500 text-neutral-400 font-medium">
             Hello 👋🏻, {`I'm`}
           </p>
           <motion.div
@@ -82,7 +82,7 @@ export default function Header() {
               </div>
             </div>
           </motion.div>
-          <p className="text-[32px] md:text-[48px] dark:text-neutral-700 text-neutral-400 tracking-tight font-medium">
+          <p className="text-[32px] md:text-[48px] dark:text-neutral-500 text-neutral-400 tracking-tight font-medium">
             a
           </p>
           <p className="text-[32px] md:text-[48px] tracking-tight font-medium">
@@ -92,7 +92,7 @@ export default function Header() {
       </BlurFade>
       <BlurFade delay={0.1}>
         <div className="flex items-center -mt-2 md:-mt-8 relative space-x-4">
-          <p className="tracking-tight text-[32px] md:text-[48px] dark:text-neutral-700 text-neutral-400 font-medium">
+          <p className="tracking-tight text-[32px] md:text-[48px] dark:text-neutral-500 text-neutral-400 font-medium">
             Based in
           </p>
           <p className="text-[32px] md:text-[48px] tracking-tight font-medium">

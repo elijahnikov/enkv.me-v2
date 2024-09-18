@@ -121,7 +121,7 @@ function ExperienceCard({
             </div>
           ))}
         </div>
-        <div className="flex flex-wrap mt-2 gap-2 w-[90%] ml-auto">
+        <div className="flex flex-wrap mt-4 gap-2 w-[90%] ml-auto">
           {roles.stack.map((stack, index) => {
             const src = extractedObjects[stack];
             return <StackBadge src={src} stack={stack} key={index} />;
@@ -140,22 +140,8 @@ export function StackBadge({
   src: React.ReactNode;
 }) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05, rotate: 1 }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
-    >
-      <Badge
-        variant={"secondary"}
-        className="rounded-md py-1 space-x-1 px-2 dark:bg-neutral-200 text-black border border-input"
-      >
-        <svg
-          viewBox="0 0 128 128"
-          className="z-10 h-[18px] max-h-[18px] w-[18px] max-w-[18px] overflow-visible"
-        >
-          {src}
-        </svg>
-        <p className="text-xs font-normal">{stack}</p>
-      </Badge>
-    </motion.div>
+    <Badge variant={"secondary"} className="rounded-md py-1 space-x-1 px-2">
+      <p className="text-xs font-normal">{stack}</p>
+    </Badge>
   );
 }

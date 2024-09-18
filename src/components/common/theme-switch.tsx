@@ -21,7 +21,7 @@ export default function ThemeSwitch() {
         onClick={() => setTheme("light")}
         className={cn(
           buttonVariants({ variant: "ghost", size: "icon" }),
-          "size-10 rounded-full",
+          "size-10 rounded-lg",
         )}
       >
         <Sun className="size-4" />
@@ -35,7 +35,7 @@ export default function ThemeSwitch() {
         onClick={() => setTheme("dark")}
         className={cn(
           buttonVariants({ variant: "ghost", size: "icon" }),
-          "size-10 rounded-full",
+          "size-10 rounded-lg",
         )}
       >
         <Moon className="size-4" />

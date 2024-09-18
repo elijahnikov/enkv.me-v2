@@ -2,11 +2,11 @@ export type ProjectsType = {
   id: number;
   title: string;
   description: string;
-  verbose_description: string;
-  header_image: string;
+  verbose_description?: string;
+  header_image?: string;
   wip?: boolean;
   active?: boolean;
-  github_url: string;
+  github_url?: string;
   url: string;
   images?: Array<{
     id: number;
@@ -19,10 +19,28 @@ export type ProjectsType = {
 
 export const projects: ProjectsType[] = [
   {
+    id: 5,
+    title: "Recall",
+    active: true,
+    description:
+      "A supercharged bookmarking platform. Save your favourite sites, videos, images and files.",
+    url: "https://recalld.co",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Drizzle",
+      "Supabase",
+      "PostgreSQL",
+      "Vercel",
+      "Tailwind",
+    ],
+  },
+  {
     id: 1,
     title: "Gridl",
     active: true,
-    description: "Your very own social moodboard in one link in bio.",
+    description: "🌐 Your very own social moodboard in one link in bio.",
     verbose_description:
       "Gridl is a personalised social moodboard platform, all conveniently accessible through a single link in your bio. With Gridl, you can curate and showcase your favorite content, inspirations, and interests in a visually captivating way. Create moodboards that reflect your unique style, passions, and personality, and share them effortlessly with your followers, friends, and colleagues. Whether you're an artist, designer, influencer, or simply someone who loves to express themselves creatively, Gridl empowers you to craft a stunning online presence that truly represents you.",
     header_image:
@@ -76,7 +94,7 @@ export const projects: ProjectsType[] = [
   {
     id: 2,
     title: "Crumble",
-    description: "A social media network for film lovers.",
+    description: "🎬 A social media network for film lovers.",
     verbose_description: `Crumble, a social network designed for movie enthusiasts, inspired by the popular platform Letterboxd. Discover a vast collection of films, engage in lively discussions, and share your interest in movies and TV with like-minded individuals.
         Explore diverse genres, rate and review movies, and curate personalised watchlists to keep track of your favorites. Users can connect with a passionate community, exchange recommendations, and stay updated on the latest industry news and releases.`,
     github_url: "https://github.com/elijahnikov/crumble",
@@ -135,7 +153,7 @@ export const projects: ProjectsType[] = [
     id: 3,
     title: "Gradiently",
     description:
-      "A minimal, lightweight NPM package colour picker to generate beautiful colours and gradients.",
+      "🌈 A minimal, lightweight NPM package colour picker to generate beautiful colours and gradients.",
     verbose_description:
       "A minimal, lightweight NPM package built with React and TypeScript to allow users to add a gradient/color picker into their React apps.",
     github_url: "https://github.com/elijahnikov/gradiently",
@@ -166,7 +184,7 @@ export const projects: ProjectsType[] = [
     id: 4,
     title: "UI",
     description:
-      "A lightweight UI library for React built with TypeScript and Radix primitives.",
+      "💻 A lightweight UI library for React built with TypeScript and Radix primitives.",
     header_image:
       "https://utfs.io/f/7af57e03-968f-418b-98e9-46f3281a7651-azvhvw.png",
     github_url: "https://github.com/elijahnikov/ui",
